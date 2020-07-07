@@ -1,6 +1,5 @@
 // Require Express
-const express = require("express");
-
+const express = require("express")
 const path = require("path");
 
 // Create an Instance of Express Callback
@@ -24,10 +23,5 @@ app.get("/notes", (req, res) => {
     return res.sendFile(path.join(__dirnname, "./public/index.html"));
 });
 
-// API / JSON
 
-// Listen on that PORT
-app.listen(PORT, (req, res) =>{
-    console.log(`Currently running on http://localhost:${PORT}`)
-});
 
