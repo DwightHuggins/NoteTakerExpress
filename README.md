@@ -4,7 +4,7 @@
 
 # DESCRIPTION
 
-```This application allows users to write, save, and delete notes.```
+This application allows users to write, save, and delete notes.
 
 # TABLE OF CONTENTS
 - Installation
@@ -14,16 +14,16 @@
 
 # INSTALLATION
 
-```Clone the repo and run the files in your server.```
+Simply clone the repo and run the files in your server.
 
 # USAGE
 
-```All of your notes in one place. Check it out here!```
-   <https://gt-notetaker-hw.herokuapp.com/>
+All of your notes in one place. 
+Check it out here! <https://gt-notetaker-hw.herokuapp.com/>
 
 # LICENSE
 
-```Copyright (c) [2020] [Dwight Huggins]
+Copyright (c) [2020] [Dwight Huggins]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -41,4 +41,4 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.```
+SOFTWARE.
