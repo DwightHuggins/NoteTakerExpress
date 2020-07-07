@@ -31,3 +31,44 @@ app.get("/notes", (req, res) => {
 //Get route
 
 
+//API/ JSON ROUTES
+app.get("/api/notes", function (req, res) {
+    fs.readFile("./db/db.json","utf8", (err, data) => {
+        if (err) {
+            return res.send("An error occured reading your data");
+        }
+        const arrayofNotes = JSON.parse(data);
+    });
+});
+// Post Route
+app.post("/api/notes", (req, res) => {
+    fs.readFile("./db/db.json", "utf8", (err, data) => {
+        if (err) {
+            return res.send("An error occured reading your data");
+        }
+        const arrayOfNotes =JSON.parse(data);
+        const note = { ...req.body, id: arrayOfNotes.length }
+        arrayofNotes.push(note);
+
+        fs.writeFile(
+            "./db/db.json",
+            JSON.stringify(arrayOfNotes),
+            "utf8",
+            (err) => {
+                if (err) {
+                    return res.send("An error occured writing your data");
+                }
+                res.json(arrayOfNotes);
+            }
+        )
+    })
+});
+//Catch all for user URL input
+app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname, "public/index.html"));
+  });
+//Listen on that port
+app.listen(PORT, (req, res) => {
+    console.log(`Currently running on http://localhost:${PORT}`);
+});
+
