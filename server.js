@@ -1,29 +1,33 @@
 // Require Express
 const express = require("express");
-// Create an Instance of Express Callback
-const app = express();
-// Add a Port
-const PORT = process.env.PORT || 3000;
+// Dependencies
+const path = require("path");
+// require FS
+const fs = require("fs");
+//Create instance of express app
+const app =express();
+//Add port
+const PORT =process.env.PORT || 3000;
 
 // Add Data Processing for POST ROUTES.
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Static files in Express-from documenation
 app.use(express.static('public'));
 
-// View / HTML
+// View / HTML Routes
+//Get route, homepage HTML sent
 app.get("/", (req, res) => {
-    res.send("Hello World!")
-})
-
+    res.sendFile(path.join(__dirname, "./public/index.html"));
+});
+//Get route, notes HTML Sent
 app.get("/notes", (req, res) => {
-    return res.sendFile(path.join(__dirnname, "./public/notes.html"));
+   res.sendfile(path.join(__dirname,"./public/notes.html"));
 });
 
-// API / JSON
 
-// Listen on that PORT
-app.listen(PORT, (req, res) => {
-    console.log(`Currently running on http://localhost:${PORT}`);
-});
+// API / JSON routes
+//Get route
+
 
