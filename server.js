@@ -38,6 +38,8 @@ app.get("/api/notes", function (req, res) {
       return res.send("An error occured reading your data");
     }
     const arrayofNotes = JSON.parse(data);
+
+    res.json(arrayofNotes);
   });
 });
 // Post Route
@@ -48,7 +50,7 @@ app.post("/api/notes", (req, res) => {
     }
     const arrayOfNotes = JSON.parse(data);
     const note = { ...req.body, id: arrayOfNotes.length };
-    arrayofNotes.push(note);
+    arrayOfNotes.push(note);
 
     fs.writeFile(
       "./db/db.json",
@@ -86,7 +88,7 @@ app.delete("/api/notes/:id", function (req, res) {
     const deletedNote = arrayOfNotes.filter(function (note) {
       return note.id != req.params.id;
     });
-    
+
     //Write file/stringifying it/new note appears in db.json file
     fs.writeFile("./db/db.json", JSON.stringify(deletedNote), "utf8", (err) => {
       if (err) {
@@ -96,3 +98,7 @@ app.delete("/api/notes/:id", function (req, res) {
     });
   });
 });
+
+app.listen(PORT, function(){
+    console.log("Listening on PORT", PORT)
+})
