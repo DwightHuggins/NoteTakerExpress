@@ -7,7 +7,7 @@ const fs = require("fs");
 //Create instance of express app
 const app = express();
 //Add port
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // Add Data Processing for POST ROUTES.
 app.use(express.urlencoded({ extended: true }));
